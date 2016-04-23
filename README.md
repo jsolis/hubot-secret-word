@@ -21,6 +21,6 @@ Then add **hubot-secret-word** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> Who wants lunch
+hubot>> Whoooop! You said the secret word of the day!!
 ```
