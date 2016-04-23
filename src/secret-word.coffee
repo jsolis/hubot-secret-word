@@ -12,7 +12,7 @@
 # Author:
 #   Jason Solis
 
-secretWords = ['anyone', 'know', 'annoying', 'lunch', 'prod', 'qa', 'beer', 'home']
+secretWords = process.env.HUBOT_WOTD_LIST || ['anyone', 'know', 'annoying', 'lunch', 'prod', 'qa', 'beer', 'home']
 
 secretWord = {}
 
