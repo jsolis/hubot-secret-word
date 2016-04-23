@@ -1,22 +1,37 @@
-# Description
+# Description:
 #   A hubot script that creates a daily secret word like Conky
 #
 # Configuration:
 #   LIST_OF_ENV_VARS_TO_SET
 #
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
 #
 # Notes:
 #   <optional notes required for the script>
 #
 # Author:
-#   Jason Solis <jsolis@gmail.com>
+#   Jason Solis
+
+secretWords = ['anyone', 'know', 'annoying', 'lunch', 'prod', 'qa', 'beer', 'home']
+
+secretWord = {}
 
 module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
 
-  robot.hear /orly/, ->
-    res.send "yarly"
+  getSecretWord = () ->
+    date = new Date()
+    today = "" + date.getFullYear() + date.getMonth() + date.getDate()
+
+    if ! secretWord[today]
+      wotdi = Math.floor(Math.random() * secretWords.length)
+      secretWord[today] = secretWords[wotdi]
+
+    return secretWord[today]
+
+  robot.hear /(.*)/, (res) ->
+    spokenWord = res.match[1]
+    if spokenWord and spokenWord.length > 0 and !new RegExp("^" + robot.name).test(spokenWord)
+      wotd = getSecretWord()
+      console.log "wotd: " + wotd
+      if spokenWord.indexOf(wotd) > -1
+        res.send "Whoooop! You said the secret word of the day!!"
