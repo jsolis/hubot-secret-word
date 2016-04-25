@@ -14,6 +14,9 @@
 
 secretWords = ['anyone', 'know', 'annoying', 'lunch', 'prod', 'qa', 'beer', 'home']
 
+if process.env.HUBOT_WOTD_LIST
+  secretWords = JSON.parse(process.env.HUBOT_WOTD_LIST)
+
 secretWord = {}
 
 module.exports = (robot) ->
