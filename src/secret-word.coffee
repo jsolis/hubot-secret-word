@@ -2,7 +2,7 @@
 #   A hubot script that creates a daily secret word like Conky
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   HUBOT_WOTD_LIST
 #
 # Commands:
 #
