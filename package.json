@@ -1,7 +1,7 @@
 {
   "name": "hubot-secret-word",
   "description": "A hubot script that creates a daily secret word like Conky",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Jason Solis <jsolis@gmail.com>",
   "license": "MIT",
   "keywords": "conky secret word",
