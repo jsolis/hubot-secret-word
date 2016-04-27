@@ -18,6 +18,13 @@ Then add **hubot-secret-word** to your `external-scripts.json`:
 ]
 ```
 
+There is one optional environment variable you can set to override the default
+list of secret words of the day
+
+```
+export HUBOT_WOTD_LIST="['lunch', 'beer', 'scotch']"
+```
+
 ## Sample Interaction
 
 ```
