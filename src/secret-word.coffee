@@ -35,6 +35,5 @@ module.exports = (robot) ->
     spokenWord = res.match[1]
     if spokenWord and spokenWord.length > 0 and !new RegExp("^" + robot.name).test(spokenWord)
       wotd = getSecretWord()
-      console.log "wotd: " + wotd
       if spokenWord.indexOf(wotd) > -1
         res.send "Whoooop! You said the secret word of the day!!"
